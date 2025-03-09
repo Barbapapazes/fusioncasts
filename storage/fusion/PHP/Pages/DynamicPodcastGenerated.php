@@ -19,6 +19,7 @@ class DynamicPodcastGenerated extends \Fusion\FusionPage
         $this->expose(changePodcastTitle: function () use ($podcast) {
             $podcast->title = Str::random(10);
             $podcast->save();
+            return $podcast;
         });
         $this->syncProps(get_defined_vars());
     }
