@@ -16,6 +16,7 @@ class CounterGenerated extends \Fusion\FusionPage
         $count = $this->prop(name: 'count', default: 0)->value();
         $this->expose(add: function () use ($count) {
             $count = $count + 1;
+            return $count;
         });
         $this->syncProps(get_defined_vars());
     }
